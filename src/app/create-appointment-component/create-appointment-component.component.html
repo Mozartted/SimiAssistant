@@ -1,3 +1,12 @@
-<p>
-  create-appointment-component works!
-</p>
+<div class="col-md-12">
+	<div class="col-md-12 form-group">
+		<input type="text" class="input-group" [(ngModel)]="appointment.name">
+	</div>
+	<div class="col-md-12">
+		<input type="text" class="input-group" [(ngModel)]="appointment.details">
+	</div>
+	<div class="col-md-12">
+		<input type="text" class="input-group" type="date" [(ngModel)]="appointment.time">
+	</div>
+	<button (click)="newAppointment()"></button>
+</div>
