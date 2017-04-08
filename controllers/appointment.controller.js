@@ -15,8 +15,18 @@ modules.exports = {
 
     createAppointment:function(req,res){
         var appointment = new Appointment({
-            
-        })
+            name:req.body.name,
+            details:req.body.details,
+            time:req.body.time
+        });
+
+        appointment.save(function(err, result){
+            if(err){
+                res.status(500).json({message:err.message})
+            }
+
+            return res.status(200).json({success:true})
+        });
     },
 
     getAppointmentDetails:function(req,res){
