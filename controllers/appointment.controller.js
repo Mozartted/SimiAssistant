@@ -4,11 +4,19 @@ var Appointment = require('../models/appointments.model.js');
 
 modules.exports = {
     getAll:function(req,res){
-
+        // getting all appointments
+    Appointment.find({}, function(err, appointments) {
+        if(err) {
+          return res.status(500).json({ message: err.message });
+        }
+        return res.status(200).json(appointments);
+      });
     },
 
     createAppointment:function(req,res){
-
+        var appointment = new Appointment({
+            
+        })
     },
 
     getAppointmentDetails:function(req,res){
@@ -23,7 +31,7 @@ modules.exports = {
 
     }
 
-}
+};
 
 
 // app.post('/api/create/task', Task.createTask);
