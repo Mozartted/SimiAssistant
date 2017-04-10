@@ -3,9 +3,8 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-var routes = require('./routes/routes')
+var routes = require('./server/routes/routes')
 
-var appointments = require('./routes/appointments');
 var scheduler = require('./scheduler');
 
 var app = express();
