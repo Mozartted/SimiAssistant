@@ -3,11 +3,14 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-var routes = require('./server/routes/routes')
+var routes = require('./server/routes/routes');
+var cfg = require('./server/config');
 
 var scheduler = require('./scheduler');
 
 var app = express();
+
+cfg.dbConnect();
 
 // view engine setup
 // Force HTTPS on heroku
