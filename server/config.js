@@ -13,7 +13,7 @@ cfg.jusibeAccessToken = process.env.JUSIBE_ACCESS_TOKEN;
 
 cfg.PhoneNumber = process.env.PHONE_NUMBER;
 
-cfg.mongoUrl = process.env.MONGOLAB_URI || process.env.MONGO_URL
+cfg.mongoUrl = process.env.MONGOLAB_URI || process.env.MONGO_URL;
 
 
 // Export configuration object
@@ -25,4 +25,4 @@ module.exports = {
             console.log('Yourtube db opened');
         });
     }
-} 
+};
