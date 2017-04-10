@@ -1,4 +1,4 @@
-var Appointment = require('../server/models/appointments.model')
+var Appointment = require('../server/models/appointments.model');
 
 var notificationWorkerFactory =  function(){
   return {
