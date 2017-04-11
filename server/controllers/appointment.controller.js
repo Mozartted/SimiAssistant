@@ -2,7 +2,7 @@ var Appointment = require('../models/appointments.model.js');
 
 
 
-modules.exports = {
+module.exports = {
     getAll:function(req,res){
         // getting all appointments
     Appointment.find({}, function(err, appointments) {

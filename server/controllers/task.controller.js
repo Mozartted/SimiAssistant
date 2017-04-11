@@ -2,7 +2,7 @@ var Task = require('../models/tasks.model.js');
 
 
 
-modules.exports = {
+module.exports = {
     getAll:function(req,res){
         Task.find({}, function(err, tasks) {
         if(err) {
