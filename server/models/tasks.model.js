@@ -3,7 +3,7 @@ var mongoose          = require('mongoose'),
     Jusibe            = require('jusibe');
 
 
-    tasktSchema       =  mongoose.Schema({
+    taskSchema       =  mongoose.Schema({
         name:               { type: String },
         details:           { type: String, required: true },
         deadline:         { type: Date, required: true },
@@ -20,6 +20,7 @@ taskSchema.statics.sendNotifications = function(callback) {
 
   // now
   var searchDate = new Date();
+  var task =  mongoose.model('Task', taskSchema, 'tasks');
   task
     .find()
     .then(function (tasks) {

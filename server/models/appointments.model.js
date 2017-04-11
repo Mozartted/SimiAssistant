@@ -20,8 +20,8 @@ appointmentSchema.statics.sendNotifications = function(callback) {
 
   // now
   var searchDate = new Date();
-  appointment
-    .find()
+  var appointment= mongoose.model('Appointment', appointmentSchema, 'appointments');
+    appointment.find()
     .then(function (appointments) {
       appointments = appointments.filter(function(appointment) {
               return appointment.requiresNotification(searchDate);
