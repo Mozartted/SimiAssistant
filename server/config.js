@@ -2,6 +2,8 @@ require('dotenv').load();
 var mongoose = require('mongoose');
 var cfg = {};
 
+cfg.mongoUrl = process.env.MONGOLAB_URI || process.env.MONGO_URL;
+
 cfg.db = mongoose.connection;
 mongoose.Promise = global.Promise;
 mongoose.connect(cfg.mongoUrl);
@@ -13,8 +15,6 @@ cfg.jusibeAccountKey = process.env.JUSIBE_ACCOUNT_KEY;
 cfg.jusibeAccessToken = process.env.JUSIBE_ACCESS_TOKEN;
 
 cfg.PhoneNumber = process.env.PHONE_NUMBER;
-
-cfg.mongoUrl = process.env.MONGOLAB_URI || process.env.MONGO_URL;
 
 
 // Export configuration object
