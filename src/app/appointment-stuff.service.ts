@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Http} from '@angular/http';
+import { environment } from '../environments/environment'
 
 // operators
 import 'rxjs/add/operator/map';
@@ -7,7 +8,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AppointmentStuffService {
 
-  private baseUrl :String = './datapoint/'
+  private baseUrl :String = environment.endpoint;
 
 
   constructor(private http:Http) {
@@ -15,7 +16,7 @@ export class AppointmentStuffService {
 
 
    public getAppointments(){
-     return this.http.get(`${this.baseUrl}appointments.json`)
+     return this.http.get(`${this.baseUrl}`)
                 .map((res)=>res.json());
    }
 
