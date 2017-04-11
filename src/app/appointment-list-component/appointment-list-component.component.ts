@@ -13,7 +13,10 @@ export class AppointmentListComponentComponent implements OnInit {
   constructor(private appointmentStuff:AppointmentStuffService) { }
 
   ngOnInit() {
-   this.appointments = this.appointmentStuff.getAppointments();
+    this.appointmentStuff.getAppointments().subscribe(data =>{
+      this.appointments = data;
+      console.log(data);
+    })
   }
 
 }
