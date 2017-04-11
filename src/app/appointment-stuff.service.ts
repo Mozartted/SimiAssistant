@@ -14,12 +14,12 @@ export class AppointmentStuffService {
    }
 
 
-   public get(){
+   public getAppointments(){
      return this.http.get(`${this.baseUrl}appointments.json`)
                 .map((res)=>res.json());
    }
 
-   public post(data){
+   public postAppointments(data){
      return this.http.post(`${this.baseUrl}appointments.json`,data)
                 .map((res)=>res.json());
    }
