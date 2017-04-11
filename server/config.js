@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 var cfg = {};
 
 cfg.db = mongoose.connection;
+mongoose.Promise = global.Promise;
 mongoose.connect(cfg.mongoUrl);
 
 // HTTP Port to run our web application
@@ -22,7 +23,7 @@ module.exports = {
     dbConnect:function(){
         cfg.db.on('error', console.error.bind( console, 'MongoDB Connection Error. Please make sure that MongoDB is running.'));
         cfg.db.once('open', function callback(){
-            console.log('Yourtube db opened');
+            console.log('Simi assistant at your service');
         });
     }
 };
