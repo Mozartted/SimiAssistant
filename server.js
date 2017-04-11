@@ -42,6 +42,10 @@ app.use(function(req, res, next) {
   next(err);
 });
 
+app.listen( cfg.cfg.port, function(){
+  console.log("Simi Server Listening on port ", cfg.cfg.port );
+});
+
 
 
 
