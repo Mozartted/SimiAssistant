@@ -16,13 +16,30 @@ export class AppointmentStuffService {
 
 
    public getAppointments(){
-     return this.http.get(`${this.baseUrl}`)
+     return this.http.get(`${this.baseUrl}appointment`)
                 .map((res)=>res.json());
    }
 
-   public postAppointments(data){
-     return this.http.post(`${this.baseUrl}appointments.json`,data)
+   public createAppointments(data){
+     return this.http.post(`${this.baseUrl}create/appointment`,data)
                 .map((res)=>res.json());
    }
+
+   public updateAppointment(data){
+      return this.http.post(`${this.baseUrl}create/appointment`,data)
+                .map((res)=>res.json());
+   }
+
+   public deleteAppointment(){
+      return this.http.delete(`${this.baseUrl}create/appointment`)
+                .map((res)=>res.json());
+   }
+
+   public getAppointmentDetails(){
+      return this.http.get(`${this.baseUrl}create/appointment`)
+                .map((res)=>res.json());
+   }
+
+
 
 }
